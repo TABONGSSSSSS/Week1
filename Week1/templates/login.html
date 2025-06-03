@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 20px;
+      width: 300px;
+      margin: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .login-box label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-box .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .login-box .actions a {
+      text-decoration: none;
+      color: black;
+      font-size: 0.9em;
+    }
+
+    .login-box .actions input[type="submit"] {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form method="POST" action="{{ url_for('login_user') }}">
+      <label>Username:</label>
+      <input type="text" name="username" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" required>
+
+      <div class="actions">
+        <a href="{{ url_for('register') }}">Register</a>
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
